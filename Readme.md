@@ -6,6 +6,8 @@ Github action to enforce Pull Request title conventions
 
 See [action.yml](./action.yml)
 
+## Snippet
+
 ```yaml
 name: pull request title check
 on:
