@@ -5,7 +5,7 @@ on:
       ref:
         description: The branch
         type: string
-        default: master
+        default: main
         required: true
 
 jobs:
