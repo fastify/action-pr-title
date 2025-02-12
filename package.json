@@ -8,7 +8,7 @@
     "start": "node dist/index.js",
     "lint": "ts-standard",
     "lint:fix": "ts-standard --fix",
-    "test": "tap"
+    "test": "borp -T"
   },
   "keywords": [
     "github",
@@ -23,9 +23,8 @@
   "devDependencies": {
     "@tsconfig/node18": "^18.2.0",
     "@types/tap": "^15.0.8",
+    "borp": "^0.19.0",
     "esbuild": "0.18.11",
-    "tap": "^16.3.7",
-    "ts-node": "^10.9.1",
     "ts-standard": "^12.0.2",
     "typescript": "^5.1.6"
   }
