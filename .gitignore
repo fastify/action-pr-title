@@ -149,3 +149,5 @@ bun.lockb
 
 #tap files
 .tap/
+
+dist/tests
