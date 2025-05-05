@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - run: |
-          npm i
+          npm i --ignore-scripts
       - run: |
           npm run lint
 
@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - run: |
-          npm i
+          npm i --ignore-scripts
       - run: |
           npm run test
 
@@ -45,7 +45,7 @@ jobs:
         node-version: lts/*
     - name: Build action
       run: |
-        npm i &&
+        npm i --ignore-scripts &&
         npm run build
     - name: Repository Integrity Check
       run: |
