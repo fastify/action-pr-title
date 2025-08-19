@@ -1,7 +1,7 @@
+import { test, TestContext } from 'node:test'
 import { validateRegex } from '../../src/lib/validate-regex'
-import { test } from 'tap'
 
-test('validateRegex is skipped if no regex is passed', t => {
+test('validateRegex is skipped if no regex is passed', (t: TestContext) => {
   t.plan(1)
   const pullRequest = {
     title: 'valid'
@@ -9,18 +9,18 @@ test('validateRegex is skipped if no regex is passed', t => {
 
   const core = {
     getInput: (value: string): string => {
-      t.equal(value, 'regex')
+      t.assert.deepStrictEqual(value, 'regex')
       return ''
     },
     setFailed: (message: string): void => {
-      t.fail(message)
+      t.assert.fail(message)
     }
   }
 
   validateRegex(pullRequest, core)
 })
 
-test('validateRegex should pass valid title', t => {
+test('validateRegex should pass valid title', (t: TestContext) => {
   t.plan(1)
   const pullRequest = {
     title: 'valid'
@@ -28,18 +28,18 @@ test('validateRegex should pass valid title', t => {
 
   const core = {
     getInput: (value: string): string => {
-      t.equal(value, 'regex')
+      t.assert.deepStrictEqual(value, 'regex')
       return '/^valid$/'
     },
     setFailed: (message: string): void => {
-      t.fail(message)
+      t.assert.fail(message)
     }
   }
 
   validateRegex(pullRequest, core)
 })
 
-test('validateRegex should call setFailed on invalid title', t => {
+test('validateRegex should call setFailed on invalid title', (t: TestContext) => {
   t.plan(2)
   const pullRequest = {
     title: 'invalid'
@@ -47,11 +47,11 @@ test('validateRegex should call setFailed on invalid title', t => {
 
   const core = {
     getInput: (value: string): string => {
-      t.equal(value, 'regex')
+      t.assert.deepStrictEqual(value, 'regex')
       return '/^valid$/'
     },
     setFailed: (message: string): void => {
-      t.equal(message, `Pull Request title "${pullRequest.title}" failed to pass match regex - /^valid$/`)
+      t.assert.deepStrictEqual(message, `Pull Request title "${pullRequest.title}" failed to pass match regex - /^valid$/`)
     }
   }
 

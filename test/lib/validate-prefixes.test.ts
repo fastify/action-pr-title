@@ -1,7 +1,7 @@
+import { test, TestContext } from 'node:test'
 import { validatePrefixes } from '../../src/lib/validate-prefixes'
-import { test } from 'tap'
 
-test('validatePrefixes is skipped if no prefixes are passed', t => {
+test('validatePrefixes is skipped if no prefixes are passed', (t: TestContext) => {
   t.plan(1)
   const pullRequest = {
     title: 'chore: Update'
@@ -9,18 +9,18 @@ test('validatePrefixes is skipped if no prefixes are passed', t => {
 
   const core = {
     getInput: (value: string): string => {
-      t.equal(value, 'prefixes')
+      t.assert.deepStrictEqual(value, 'prefixes')
       return ''
     },
     setFailed: (message: string): void => {
-      t.fail(message)
+      t.assert.fail(message)
     }
   }
 
   validatePrefixes(pullRequest, core)
 })
 
-test('validatePrefixes should pass valid title', t => {
+test('validatePrefixes should pass valid title', (t: TestContext) => {
   t.plan(1)
   const pullRequest = {
     title: 'chore: Update'
@@ -28,18 +28,18 @@ test('validatePrefixes should pass valid title', t => {
 
   const core = {
     getInput: (value: string): string => {
-      t.equal(value, 'prefixes')
+      t.assert.deepStrictEqual(value, 'prefixes')
       return 'chore:'
     },
     setFailed: (message: string): void => {
-      t.fail(message)
+      t.assert.fail(message)
     }
   }
 
   validatePrefixes(pullRequest, core)
 })
 
-test('validatePrefixes should call setFailed on invalid title', t => {
+test('validatePrefixes should call setFailed on invalid title', (t: TestContext) => {
   t.plan(2)
   const pullRequest = {
     title: 'fix: bug in parser'
@@ -47,11 +47,11 @@ test('validatePrefixes should call setFailed on invalid title', t => {
 
   const core = {
     getInput: (value: string): string => {
-      t.equal(value, 'prefixes')
+      t.assert.deepStrictEqual(value, 'prefixes')
       return 'chore:'
     },
     setFailed: (message: string): void => {
-      t.equal(message, 'Pull Request title "fix: bug in parser" did not matched with a prefix - "chore:"')
+      t.assert.deepStrictEqual(message, 'Pull Request title "fix: bug in parser" did not matched with a prefix - "chore:"')
     }
   }
 
