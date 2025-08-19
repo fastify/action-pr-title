@@ -27,7 +27,7 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: |
-        npm i
+        npm i --ignore-scripts
     - name: Build Action
       run: |
         npm run build
