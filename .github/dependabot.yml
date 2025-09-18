@@ -1,7 +1,6 @@
 version: 2
 updates:
   - package-ecosystem: "github-actions"
-    directory: "/"
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 10
@@ -10,7 +9,6 @@ updates:
       prefix: "chore"
 
   - package-ecosystem: "npm"
-    directory: "/"
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 10
