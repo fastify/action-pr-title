@@ -22,7 +22,7 @@ jobs:
       with:
         ref: ${{ inputs.ref }}
         persist-credentials: false
-    - uses: actions/setup-node@v5
+    - uses: actions/setup-node@v6
       with:
         check-latest: true
         node-version: lts/*
