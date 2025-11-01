@@ -24,7 +24,7 @@
     "@tsconfig/node24": "^24.0.1",
     "@types/node": "^24.5.1",
     "borp": "^0.21.0",
-    "esbuild": "0.25.10",
+    "esbuild": "0.25.11",
     "eslint": "^9.35.0",
     "neostandard": "^0.12.2",
     "typescript": "^5.9.2"
