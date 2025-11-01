@@ -23,7 +23,7 @@
   "devDependencies": {
     "@tsconfig/node24": "^24.0.1",
     "@types/node": "^24.5.1",
-    "borp": "^0.20.2",
+    "borp": "^0.21.0",
     "esbuild": "0.25.10",
     "eslint": "^9.35.0",
     "neostandard": "^0.12.2",
