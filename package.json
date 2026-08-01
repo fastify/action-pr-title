@@ -27,6 +27,6 @@
     "esbuild": "0.25.11",
     "eslint": "^9.35.0",
     "neostandard": "^0.13.0",
-    "typescript": "^6.0.2"
+    "typescript": "^7.0.2"
   }
 }
