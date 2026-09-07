@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: fastify/action-pr-title@v0
       with:
-        prefixes: 'feature,chore,fix' # title should start with the given prefix
+        prefixes: 'feature,chore,fix,build' # title should start with the given prefix
